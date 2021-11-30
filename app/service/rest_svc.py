@@ -341,6 +341,8 @@ class RestService(RestServiceInterface, BaseService):
                 potential_links.append(pl)
         return await self.get_service('planning_svc').sort_links(potential_links)
 
+    """ PRIVATE """
+
     async def _build_operation_object(self, access, data):
         name = data.pop('name')
         group = data.pop('group', '')

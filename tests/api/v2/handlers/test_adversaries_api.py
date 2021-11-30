@@ -32,8 +32,7 @@ def new_adversary_payload():
         'adversary_id': '456',
         'objective': '495a9828-cab1-44dd-a0ca-66e58177d8cc',
         'tags': [],
-        'atomic_ordering': [],
-        'plugin': ''
+        'atomic_ordering': []
     }
 
 
@@ -50,8 +49,7 @@ def test_adversary(loop):
                           'adversary_id': '123',
                           'objective': '495a9828-cab1-44dd-a0ca-66e58177d8cc',
                           'tags': [],
-                          'atomic_ordering': [],
-                          'plugin': ''}
+                          'atomic_ordering': []}
     test_adversary = AdversarySchema().load(expected_adversary)
     loop.run_until_complete(BaseService.get_service('data_svc').store(test_adversary))
     return test_adversary

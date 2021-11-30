@@ -22,6 +22,8 @@ class AdvancedPack(BaseWorld):
         self.app_svc.application.router.add_route('GET', '/advanced/configurations', self._section_configurations)
         self.app_svc.application.router.add_route('GET', '/advanced/exfills', self._section_exfil_files)
 
+    """ PRIVATE """
+
     @check_authorization
     @template('planners.html')
     async def _section_planners(self, request):
